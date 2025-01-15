@@ -1,0 +1,36 @@
+The Story of Tim Berners-Lee and the Creation of HTTP and HTML
+
+The Problem (1980s):
+
+At CERN, scientists struggled to share research efficiently.
+Existing methods like email and isolated databases were cumbersome.
+
+➔ Tim’s Vision:
+
+Create a universal, interconnected system to share knowledge seamlessly.
+
+The Proposal (1989)
+
+Tim wrote "Information Management: A Proposal" at CERN.
+Key Idea: Use hypertext to link documents across computers, forming a "web" of information.
+
+Building the Web
+➔ HTML (HyperText Markup Language):
+A language to structure content for web pages.
+Allowed text, links, images, and headings to be displayed in a navigable format.
+
+➔ HTTP (HyperText Transfer Protocol):
+A set of rules enabling communication between computers.
+Ensured web pages could be requested and delivered efficiently.
+
+First Web Tools (1990):
+Tim created:
+CERN httpd: The first web server.
+WorldWideWeb: The first browser.
+The first website: http://info.cern.ch, hosted at CERN.
+
+The Breakthrough (1991–1993):
+➔ August 6, 1991:
+The world’s first website went live, explaining the web and how to use it.
+➔ 1993:
+CERN released the web’s code for free, making it open to all.
