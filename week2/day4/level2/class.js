@@ -11,5 +11,3 @@ class Animal {
 }
 
 let dog = new Animal ("dog");
-
-// class, objects
