@@ -14,7 +14,7 @@ function onDone (data){
     console.log(data)
 }
 kiratsReadFile.then(onDone);
-//
+
 
 function kiratsAsyncFunction(){
     let p = new Promise ( function (resolve){

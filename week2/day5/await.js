@@ -8,8 +8,8 @@ function kiratsAsyncFunction(){
 }
 
 async function main() {
-    let value = await kiratsAsyncFunction()
-    consosle.log(value);
+    let value = await kiratsAsyncFunction();
+    console.log(value);
 }
 
 main ();
