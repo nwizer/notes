@@ -10,8 +10,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.post('/submit', (req, res) => {
-  console.log(req.body); // Access parsed data
-  res.send('Data received');
+  console.log(req.body); 
+  res.send(res.body);
 });
 
 app.listen(3000, () => console.log('Server running on port 3000'));
