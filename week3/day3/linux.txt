@@ -1,0 +1,110 @@
+pwd
+1. pwd (Print Working Directory)
+Displays the current directory path.
+
+ls
+2. ls (List Directory Contents)
+Lists files and directories in the current directory.
+Common options:
+ls -l → Detailed list (permissions, owner, size, date)
+ls -a → Show hidden files
+ls -lh → Human-readable file sizes
+
+cat
+cat (Concatenate and Display File Contents)
+Displays the content of a file.
+$ cat > newfile.txt
+Type some text and press Ctrl+D to save.
+
+touch
+touch (Create an Empty File)
+Creates an empty file or updates its timestamp.
+$ touch newfile.txt
+
+mkdir
+mkdir (Make Directory)
+Creates a new directory.
+$ mkdir myfolder
+$ mkdir -p parent/child/grandchild
+
+mv
+(Move/Rename Files)
+Moves or renames files and directories.
+$ mv oldname.txt newname.txt
+$ mv file.txt /home/user/documents/
+
+cp
+(Copy Files and Directories)
+Copies files or directories.
+$ cp file1.txt file2.txt
+$ cp -r folder1 folder2
+
+rm
+(Remove Files and Directories)
+Deletes files or directories.
+$ rm file.txt
+Warning: Use rm -rf carefully as it deletes everything without confirmation.
+
+
+chmod
+(Change File Permissions)
+Modifies file or directory permissions.
+Example (give execute permission to a script):
+$ chmod +x script.sh
+Example (set specific permissions):
+$ chmod 755 file.txt
+7 → Read, Write, Execute (Owner)
+5 → Read, Execute (Group)
+5 → Read, Execute (Others)
+
+
+echo
+(Print Text to Terminal or File)
+Displays a message or saves it to a file.
+$ echo "Hello, World!"
+$ echo "This is a test" > file.txt
+
+head & tail
+(Display First/Last Lines of a File)
+head → Shows the first 10 lines of a file.
+tail → Shows the last 10 lines of a file.
+Use -n to specify the number of lines.
+$ head -5 file.txt  # First 5 lines
+$ tail -5 file.txt  # Last 5 lines
+
+pipe
+| (Pipe Operator)
+Used to pass the output of one command as input to another.
+$ ls -l | grep "txt"
+
+wc
+Counts lines, words, and characters in a file.
+$ wc file.txt
+10  50  200 file.txt  # 10 lines, 50 words, 200 characters
+$ wc -w file.txt
+
+grep
+Searches for a string in a file or output.
+$ grep "error" logfile.txt
+$ grep -i "error" logfile.txt
+$ grep -r "error" /var/logs
+
+history
+$ history
+$ !25  # Runs command number 25
+$ history -c
+
+sed, awk
+sed (Stream Editor)
+Used for find-and-replace, deleting lines, and modifying files.
+Example (replace "old" with "new"):
+$ sed 's/old/new/g' file.txt
+Example (delete line 3):
+$ sed '3d' file.txt
+
+awk (Text Processing)
+Processes and extracts text from files.
+Example (print first column of a file):
+$ awk '{print $1}' file.txt
+Example (print specific columns from CSV):
+$ awk -F, '{print $1, $3}' data.csv
