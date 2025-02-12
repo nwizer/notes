@@ -34,6 +34,8 @@ function calculateSum (n){
     return ans;
 }
 
+const app = express();
+
 app.get("/", function(req,res){
     const n = parseInt(req.query.n);
     const ans = calculateSum(n);
@@ -50,13 +52,13 @@ const numbers = [10, 20, 30, 40, 50];
 const filteredNumbers = numbers.filter(num => num > 25);
 console.log(filteredNumbers); // [30, 40, 50]
 
-const numbers1 = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
 // Square each number
 const squaredNumbers = numbers.map(num => num * num);
 console.log(squaredNumbers); // [1, 4, 9, 16, 25]
 
-const numbers2 = [1, 2, 3, 4, 5];
+const numbers = [1, 2, 3, 4, 5];
 
 // Sum all numbers
 const sum = numbers.reduce((acc, num) => acc + num, 0);
