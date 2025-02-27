@@ -3,26 +3,30 @@ const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
 
-// Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/authDB', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
+const MONGO_URI = process.env.MONGO_URI || 'mongodb+srv://manimani:hellomani123@cluster0.njp70.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+
+mongoose.connect(MONGO_URI)
+    .then(() => console.log('Connected to MongoDB Atlas'))
+    .catch(err => console.error('MongoDB connection error:', err));
 
 const userSchema = new mongoose.Schema({
     username: { type: String, required: true, unique: true },
     password: { type: String, required: true }
 });
-
-const User = mongoose.model('User', userSchema);
+    
+const User = mongoose.model('User', userSchema);    
 
 const SECRET_KEY = 'your_secret_key';
 
-// Signup Route
+app.get('/', (req, res) => {
+    res.send('MongoDB connection is working!');
+});
+
 app.post('/signup', async (req, res) => {
     try {
         const { username, password } = req.body;
@@ -55,5 +59,7 @@ app.post('/signin', async (req, res) => {
     }
 });
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
