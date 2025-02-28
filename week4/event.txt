@@ -1,0 +1,69 @@
+DOM Event Listeners
+DOM Event Listeners provide a more flexible and powerful way to handle events compared to traditional event attributes (e.g., onclick). Event Listeners allow you to attach multiple event handlers to a single event, making your code more modular and easier to maintain.
+Using addEventListener:
+The addEventListener method is used to attach an event listener to an HTML element. It takes three parameters: the event type, the function to be executed when the event occurs, and an optional third parameter indicating whether the event should be captured during the event propagation phase.
+Syntax:
+element.addEventListener(eventType, eventHandler, useCapture);
+eventType: A string representing the type of event (e.g., "click", "keydown", "change").
+eventHandler: A function that will be called when the event occurs.
+useCapture: (Optional) A boolean value indicating whether to use the capturing phase (true) or the bubbling phase (false, default).
+Example of Multiple Event Listeners:
+Here's a code snippet demonstrating the use of multiple event listeners on a button. In this example, we have a button that changes its color and displays a message when clicked, and it resets to its default state when the mouse leaves it:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Event Listeners Example</title>
+    <style>
+        #myButton {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="myButton">Click me</button>
+
+    <script>
+        // Get the button element
+        var button = document.getElementById("myButton");
+
+        // Event listener for the "click" event
+        button.addEventListener("click", function() {
+            // Change the button color
+            button.style.backgroundColor = "green";
+            // Display a message
+            alert("Button clicked!");
+        });
+
+        // Event listener for the "mouseenter" event
+        button.addEventListener("mouseenter", function() {
+            // Change the button color on mouse enter
+            button.style.backgroundColor = "yellow";
+        });
+
+        // Event listener for the "mouseleave" event
+        button.addEventListener("mouseleave", function() {
+            // Reset the button color on mouse leave
+            button.style.backgroundColor = "";
+        });
+    </script>
+
+</body>
+</html>
+
+Common Events:
+Click Event:
+Triggered when a mouse button is clicked.
+Keydown and Keyup Events:
+Fired when a key on the keyboard is pressed or released.
+Submit Event:
+Triggered when a form is submitted.
+Change Event:
+Fired when the value of an input field changes.
+Load Event:
+Occurs when a resource (like an image or script) and the entire page have finished loading.
